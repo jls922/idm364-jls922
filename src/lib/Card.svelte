@@ -1,18 +1,14 @@
 <script>
     import { addToBag } from '$lib/stores/cart.svelte';
-    export let id, name, price, pieceCount, image;
-    const product = { id, name, price, pieceCount, image };
+    export let id, item_name, price;
+    const product = { id, item_name, price };
 </script>
 
 <a class="card-link" href={`/shop/${id}`}>
     <div class="product-card">
-        <img src={`/images/products/${image}`} alt="{name}" />
+        <img src={`../../static/${image}`} alt="{item_name}" />
         <div class="product-info">
-            <div class="piece-count">
-                <img src="/images/lego-piece.png" alt="Lego Piece" />
-                <p>{pieceCount}</p>
-            </div>
-            <h4>{name}</h4>
+            <h4>{item_name}</h4>
             <h6>{price}</h6>
         </div>
         <button on:click|preventDefault={() => addToBag(product)} class="add-to-cart">
