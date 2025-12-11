@@ -1,74 +1,28 @@
 <script>
-    import { getContext } from 'svelte'
-
-    let { data } = $props();
-    let cart = getContext('cart')
-    
-    let products = $derived(data.products || [])
+    export let data;
+    const product = data.product;
+    import Card from '$lib/Card.svelte';
+    let featuredProducts = data.products.slice(6, 10);
 </script>
 
-<div class="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
-  <div class="max-w-7xl mx-auto px-4 py-8">
-
-    <!-- Products Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {#each filteredProducts as product}
-        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-          <div class="relative">
-            <a href="/products/{product.id}">
-              <img 
-                src={product.image_url} 
-                alt={product.name}
-                class="w-full h-64 object-cover"
-              />
-            </a>
-            <div class="absolute bottom-4 left-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
-              {product.category}
-            </div>
-          </div>
-
-          <div class="p-5">
-            <div class="flex items-start justify-between mb-2">
-              <div>
-                <h3 class="font-bold text-lg text-gray-800">{product.name}</h3>
-                <p class="text-sm text-gray-500">{product.brand}</p>
-              </div>
-              <div class="flex items-center gap-1">
-                <Star class="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                <span class="text-sm font-semibold">{product.rating}</span>
-              </div>
-            </div>
-
-            <p class="text-gray-600 text-sm mb-4 line-clamp-2">{product.description}</p>
-
-            <div class="flex items-center justify-between">
-              <span class="text-2xl font-bold text-blue-600">${product.price}</span>
-              <a
-                href="/products/{product.id}"
-                class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition"
-              >
-                View Details
-              </a>
-            </div>
-
-            <p class="text-xs text-gray-500 mt-2">
-              {product.stock} in stock
-            </p>
-          </div>
-        </div>
-      {/each}
+<div class="homepage">
+    <div class="hero">
+        <h1>Welcome to Toadally Awesome! Explore vibrant frogs, toads, and more. Your next fascinating companion awaits.</h1>
+        <!--<img src="/images/hero.png" alt="Lego Hero" />-->
     </div>
-
-    {#if filteredProducts.length === 0}
-      <div class="text-center py-16">
-        <p class="text-gray-500 text-lg">No products found</p>
-      </div>
-    {/if}
-  </div>
+    <div class="featured-products">
+        <h2>Featured Products</h2>
+        <div class="products-display">
+            {#each featuredProducts as product}
+                <Card
+                    image={product.image}
+                    name={product.name}
+                    pieceCount={product.pieceCount}
+                    price={product.price}
+                    description={product.description}
+                    id={product.id}
+                />
+            {/each}
+        </div>
+    </div>
 </div>
-
-<!-- <ul>
-  {#each data.instruments as instrument}
-    <li>{instrument.name}</li>
-  {/each}
-</ul> -->
