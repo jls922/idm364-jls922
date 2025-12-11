@@ -1,5 +1,5 @@
 <script>
-  import { ShoppingCart, X, Minus, Plus } from 'lucide-svelte'
+  import { ShoppingCart, X, Minus, Plus } from '@lucide/svelte'
   import { getContext } from 'svelte'
   
   let cart = getContext('cart')

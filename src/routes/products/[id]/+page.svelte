@@ -1,5 +1,5 @@
 <script>
-  import { Heart, Star, Minus, Plus } from 'lucide-svelte'
+  import { Heart, Star, Minus, Plus } from '@lucide/svelte'
   import { getContext } from 'svelte'
   import { goto } from '$app/navigation'
   
@@ -40,14 +40,6 @@
             alt={product.name}
             class="w-full h-96 object-cover rounded-xl"
           />
-          <button
-            onclick={() => wishlist.toggle(product.id)}
-            class="absolute top-4 right-4 bg-white rounded-full p-3 hover:bg-red-50 transition shadow-lg"
-          >
-            <Heart 
-              class="w-6 h-6 {wishlist.has(product.id) ? 'fill-red-500 text-red-500' : 'text-gray-400'}"
-            />
-          </button>
         </div>
 
         <!-- Product Info -->
@@ -76,50 +68,30 @@
 
           <div class="text-4xl font-bold text-blue-600 mb-6">${product.price}</div>
 
-          <!-- Size Selection -->
-          <div class="mb-6">
-            <label class="block text-sm font-semibold text-gray-700 mb-3">Size</label>
-            <div class="flex gap-2 flex-wrap">
-              {#each product.sizes as size}
-                <button
-                  onclick={() => selectedSize = size}
-                  class="px-4 py-2 border-2 rounded-lg transition {selectedSize === size ? 'border-blue-500 bg-blue-50 text-blue-600' : 'border-gray-200 hover:border-gray-300'}"
-                >
-                  {size}
-                </button>
-              {/each}
-            </div>
-          </div>
-
-          <!-- Color Selection -->
-          <div class="mb-6">
-            <label class="block text-sm font-semibold text-gray-700 mb-3">Color</label>
-            <div class="flex gap-2 flex-wrap">
-              {#each product.colors as color}
-                <button
-                  onclick={() => selectedColor = color}
-                  class="px-4 py-2 border-2 rounded-lg transition {selectedColor === color ? 'border-blue-500 bg-blue-50 text-blue-600' : 'border-gray-200 hover:border-gray-300'}"
-                >
-                  {color}
-                </button>
-              {/each}
-            </div>
-          </div>
-
           <!-- Quantity -->
           <div class="mb-6">
-            <label class="block text-sm font-semibold text-gray-700 mb-3">Quantity</label>
+            <label for="quantity" class="block text-sm font-semibold text-gray-700 mb-3">Quantity</label>
             <div class="flex items-center gap-3">
               <button
                 onclick={() => quantity = Math.max(1, quantity - 1)}
                 class="w-10 h-10 rounded-lg border-2 border-gray-200 flex items-center justify-center hover:bg-gray-50"
+                aria-label="Decrease quantity"
               >
                 <Minus class="w-4 h-4" />
               </button>
-              <span class="text-xl font-semibold w-12 text-center">{quantity}</span>
+              <input
+                id="quantity"
+                type="number"
+                bind:value={quantity}
+                min="1"
+                max={product.stock}
+                class="text-xl font-semibold w-16 text-center border-2 border-gray-200 rounded-lg"
+                aria-label="Product quantity"
+              />
               <button
                 onclick={() => quantity = Math.min(product.stock, quantity + 1)}
                 class="w-10 h-10 rounded-lg border-2 border-gray-200 flex items-center justify-center hover:bg-gray-50"
+                aria-label="Increase quantity"
               >
                 <Plus class="w-4 h-4" />
               </button>
