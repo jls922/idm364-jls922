@@ -1,5 +1,5 @@
 <script>
-    let { data } = $props();
+    export let data;
     const product = data.item_name;
     import Card from '$lib/Card.svelte';
     let products = data.item_name;
