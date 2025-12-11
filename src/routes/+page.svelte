@@ -1,9 +1,21 @@
 <script>
     export let data;
-    const product = data.item-name;
+    const product = data.item_name;
     import Card from '$lib/Card.svelte';
-    let products = data.item-name;
+    let products = data.item_name;
 </script>
+
+<main>
+    {#each data.products as product}
+        <Card
+        name={product.item_name}
+        frogImage={product.image}
+        id={product.id}
+        price={product.price}
+        description={product.description}
+        />
+    {/each}
+</main>
 
 <div class="homepage">
     <div class="hero">
@@ -31,7 +43,7 @@
         <a href="/products/{product.id}" class="product-card">
           <div class="product-image">
             <img 
-              src={product.image_url || '/images/favicon.png'} 
+              src={product.frogImage || '/images/favicon.png'} 
               alt={product.name}
             />
           </div>
