@@ -1,5 +1,5 @@
 <script>
-    import { addToBag } from '$lib/cartServices.js';
+    import { addToBag } from '$lib/stores/cart.svelte';
     export let id, name, price, pieceCount, image;
     const product = { id, name, price, pieceCount, image };
 </script>
