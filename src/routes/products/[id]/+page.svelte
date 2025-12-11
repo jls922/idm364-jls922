@@ -1,7 +1,7 @@
 <script>
     export let data;
     const product = data.product;
-    import { addToBag } from '$lib/cartServices.js';
+    import { addToBag } from '$lib/stores/cart.svelte.js';
 </script>
 
 <!-- Add error state UI -->

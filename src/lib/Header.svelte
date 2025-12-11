@@ -1,5 +1,5 @@
 <script>
-    import { bag } from '$lib/cartServices.js';
+    import { bag } from '$lib/stores/cart.svelte';
     let count = 0;
     $: bag.subscribe(items => {
         count = items.reduce((sum, item) => sum + item.quantity, 0);
