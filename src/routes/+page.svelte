@@ -22,17 +22,6 @@
                 class="w-full h-64 object-cover"
               />
             </a>
-            <button
-              onclick={(e) => {
-                e.stopPropagation()
-                wishlist.toggle(product.id)
-              }}
-              class="absolute top-4 right-4 bg-white rounded-full p-2 hover:bg-red-50 transition"
-            >
-              <Heart 
-                class="w-5 h-5 {wishlist.has(product.id) ? 'fill-red-500 text-red-500' : 'text-gray-400'}"
-              />
-            </button>
             <div class="absolute bottom-4 left-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
               {product.category}
             </div>
