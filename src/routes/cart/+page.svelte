@@ -1,7 +1,7 @@
 <script>
     export let data;
     const product = data.product;
-    import { bag, addToBag, removeFromBag, deleteFromBag, clearBag, latestOrder } from '$lib/cartServices.js';
+    import { bag, addToBag, removeFromBag, deleteFromBag, clearBag, latestOrder } from '$lib/cart.svelte.js';
     import { onDestroy } from 'svelte';
     let bagItems = [];
     const unsubscribe = bag.subscribe(value => {
