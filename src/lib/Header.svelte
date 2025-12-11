@@ -16,7 +16,6 @@
         <span class="menu-button"></span>
         </label>
         <ul class="menu">
-            <li><a href="../shop">Shop</a></li>
             <li><a href="../bag">Bag &lpar;<span class="bag-count">{count}</span>&rpar;</a></li>
         </ul>
     </section>

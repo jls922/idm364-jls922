@@ -1,19 +1,18 @@
 <script>
     export let data;
-    const product = data.product;
+    const product = data.item-name;
     import Card from '$lib/Card.svelte';
-    let featuredProducts = data.products.slice(6, 10);
+    let products = data.item-name;
 </script>
 
 <div class="homepage">
     <div class="hero">
         <h1>Welcome to Toadally Awesome! Explore vibrant frogs, toads, and more. Your next fascinating companion awaits.</h1>
-        <!--<img src="/images/hero.png" alt="Lego Hero" />-->
     </div>
     <div class="featured-products">
         <h2>Featured Products</h2>
         <div class="products-display">
-            {#each featuredProducts as product}
+            {#each products as product}
                 <Card
                     image={product.image}
                     name={product.name}
