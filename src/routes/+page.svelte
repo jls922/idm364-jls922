@@ -46,17 +46,9 @@
 
 <style>
   :global(body) {
-    background-color: #FAFAFA;
+    background-color: white;
     margin: 0;
     padding: 0;
-  }
-
-  h1 {
-    font-family: 'Nunito', sans-serif;
-    font-size: 48px;
-    font-weight: 700;
-    color: #333;
-    margin: 0;
   }
 
   .products-grid {
@@ -67,7 +59,7 @@
   }
 
   .product-card {
-    background: #FAFAFA;
+    background: white;
     border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
@@ -85,7 +77,7 @@
   .product-image {
     width: 100%;
     aspect-ratio: 1;
-    background-color: #FFF1B8;
+    background-color: white;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -107,7 +99,7 @@
     font-family: 'Nunito', sans-serif;
     font-size: 20px;
     font-weight: 700;
-    color: #333;
+    color: black;
     margin: 0 0 0.5rem 0;
   }
 
@@ -115,7 +107,7 @@
     font-family: 'Nunito', sans-serif;
     font-size: 18px;
     font-weight: 400;
-    color: #333;
+    color: black;
     margin: 0;
   }
 
