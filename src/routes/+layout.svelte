@@ -1,12 +1,11 @@
 <script>
 	import favicon from '$lib/assets/favicon.svg';
-	import { createCartStore, createWishlistStore } from '$lib/stores/cart.svelte.js'
+	import { createCartStore } from '$lib/stores/cart.svelte.js'
 
 	let cart = createCartStore()
 	
 	import { setContext } from 'svelte'
   	setContext('cart', cart)
-  	setContext('wishlist', wishlist)
 	
 	let { children } = $props();
 </script>
