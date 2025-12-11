@@ -96,17 +96,11 @@
   }
 
   .product-name {
-    font-family: 'Nunito', sans-serif;
-    font-size: 20px;
-    font-weight: 700;
     color: black;
     margin: 0 0 0.5rem 0;
   }
 
   .product-price {
-    font-family: 'Nunito', sans-serif;
-    font-size: 18px;
-    font-weight: 400;
     color: black;
     margin: 0;
   }
