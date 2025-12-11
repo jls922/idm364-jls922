@@ -9,7 +9,7 @@
 <header>
     <section class="top-nav">
         <div>
-            <a href="../"><h2>Toadally Awesome</h2></a>
+            <a href="../"><h2>Toadally</h2></a>
         </div>
         <input id="menu-toggle" type="checkbox">
         <label class="menu-button-container" for="menu-toggle">
