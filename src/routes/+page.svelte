@@ -9,7 +9,7 @@
     {#each data.products as product}
         <Card
         name={product.item_name}
-        frogImage={product.image}
+        image={product.image}
         id={product.id}
         price={product.price}
         description={product.description}
@@ -26,7 +26,7 @@
         <a href="/products/{product.id}" class="product-card">
           <div class="product-image">
             <img 
-              src={product.frogImage || '/images/favicon.png'} 
+              src={product.image || '/images/favicon.png'} 
               alt={product.name}
             />
           </div>
