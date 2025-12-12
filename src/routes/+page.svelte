@@ -21,23 +21,6 @@
     <div class="hero">
         <h1>Welcome to Toadally! Explore vibrant frogs, toads, and more. Your next fascinating companion awaits.</h1>
     </div>
-    <!--
-    <div class="featured-products">
-        <h2>Featured Products</h2>
-        <div class="products-display">
-            {#each products as product}
-                <Card
-                    image={product.image}
-                    name={product.name}
-                    pieceCount={product.pieceCount}
-                    price={product.price}
-                    description={product.description}
-                    id={product.id}
-                />
-            {/each}
-        </div>
-    </div>
-    -->
     <div class="products-grid">
       {#each products as product}
         <a href="/products/{product.id}" class="product-card">
@@ -57,11 +40,6 @@
 </div>
 
 <style>
-  :global(body) {
-    background-color: white;
-    margin: 0;
-    padding: 0;
-  }
 
   .products-grid {
     display: grid;
