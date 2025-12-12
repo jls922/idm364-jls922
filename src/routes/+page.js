@@ -1,27 +1,17 @@
-import { supabase } from '$lib/supabaseClient'
+import { supabase } from "$lib/supabaseClient";
 
 export async function load() {
-  const { data, error } = await supabase.from('products').select('*')
-
-  return {
-    products: data ?? [],
-    error: error?.message ?? null
-  }
+    const { data } = await supabase.from("products").select();
+    
+    // Add the path prefix to each image
+    const productsWithPaths = data?.map(product => ({
+        ...product,
+        image: product.image?.startsWith('images/') || product.image?.startsWith('/') 
+            ? product.image 
+            : `images/frogs/${product.image}`
+    })) ?? [];
+    
+    return {
+        products: productsWithPaths,
+    };
 }
-
-/*
-import { supabase } from '$lib/supabaseClient'
-
-export async function load() {
-  const { data: products, error } = await supabase
-    .from('products')
-    .select('*')
-    .order('id')
-  
-  if (error) {
-    console.error('Error loading products:', error)
-    return { products: [] }
-  }
-  
-  return { products }
-}*/
