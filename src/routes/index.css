@@ -18,6 +18,10 @@ html, body {
     background-color: lightgray;
 }
 
+main {
+    margin: 20px;
+}
+
 h1, h2, h3 {
     font-family: Fredoka;
 }
@@ -28,67 +32,41 @@ h4, h5, h6 {
 
 h1 {
     font-size: 48px;
-    letter-spacing: -0.48px;
 }
 
 h2 {
     font-size: 40px;
-    letter-spacing: -0.4px;
 }
 
 h3 {
     font-size: 36px;
-    letter-spacing: -0.36px;
 }
 
 h4 {
     font-size: 24px;
-    letter-spacing: -0.24px;
 }
 
 h5 {
     font-size: 20px;
-    letter-spacing: -0.2px;
 }
 
 h6 {
     font-size: 16px;
-    letter-spacing: -0.16px;
 }
 
 p {
     font-family: OpenSans;
     font-size: 16px;
-    font-weight: 400;
-    line-height: 160%;
-    letter-spacing: -0.08px;
-}
-
-p b {
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 160%;
-    letter-spacing: -0.08px;
 }
 
 a {
     color: #125231;
+    font-family: OpenSans;
 }
 
 .center-text {
     text-align: center;
     margin: auto;
-}
-
-.back {
-    position: fixed;
-    top: 100px;
-    left: 24px;
-    padding: 8px;
-    background-color: lightgray;
-    border-radius: 8px;
-    border: 2px solid #125231;
 }
 
 /*header*/
@@ -111,7 +89,7 @@ header a:hover{
     text-decoration: underline;
 }
 
-/*nav bar*/
+/*navigation bar*/
 .top-nav {
     display: flex;
     flex-direction: row;
@@ -252,13 +230,27 @@ header a:hover{
 
 /*product card*/
 .card-link {
-    width: fit-content;
+    margin: 0 auto;
     text-decoration: none;
-    color: black;
 }
 
 .product-card {
+    align-items: stretch;
+    background-color: white;
+    border: 4px solid #031c0f; /*hmmm either solid or outset*/
+    border-radius: 10px;
+    color: #031c0f;
     display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: flex-start;
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+    transition: background-color 0.2s ease-in-out;
+    max-width: 100%;
+    width: 360px;
+    /*display: flex;
     flex-direction: column;
     justify-content: start;
     align-items: center;
@@ -269,7 +261,7 @@ header a:hover{
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     padding: 24px;
     width: 290px;
-    height: 448px;
+    height: 448px;*/
 }
 
 .product-card img {
@@ -279,7 +271,7 @@ header a:hover{
     object-fit: contain;
 }
 
-.product-info {
+.card-info {
     display: flex;
     flex-direction: column;
     align-items: start;
@@ -301,24 +293,25 @@ header a:hover{
     width: 30px;
 }
 
-.product-info h4 {
+.card-info h4 {
     width: 100%;
     text-wrap: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.add-to-cart {
+.add-to-bag {
+    align-items: center;
+    background-color: #125231;
+    border-radius: 12px;
+    color: white;
+    column-gap: 12px;
+    cursor: pointer;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
-    column-gap: 12px;
-    background-color: #125231;
-    color: white;
-    border-radius: 12px;
+    margin: 20px auto 0 auto;
     padding: 8px 16px;
-    cursor: pointer;
 }
 
 .add-to-cart img {
@@ -328,12 +321,12 @@ header a:hover{
 
 /*homepage*/
 .homepage {
+    align-items: center;
+    color: #031c0f;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 48px;
-    padding: 48px;
     margin: 0;
+    padding: 40px 20px 20px 20px;
 }
 
 .homepage .hero {
@@ -366,29 +359,6 @@ header a:hover{
     padding: 0;
 }
 
-
-/*shop page*/
-.shop-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 48px;
-    padding: 48px;
-    margin: 0;
-}
-
-.shop-page .products-display {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 32px;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-}
-
 /*product page*/
 .product-page {
     display: flex;
@@ -400,6 +370,18 @@ header a:hover{
     max-width: 1200px;
     padding: 48px;
     margin: auto;
+}
+
+.product-page .add-to-bag {
+    align-items: start;
+    justify-content: start;
+    margin: 20px 20px 20px 0;
+    padding: 8px 16px;
+}
+
+.shopping-bag img {
+    height: 30px;
+    width: 30px;
 }
 
 .product-image {
@@ -427,31 +409,35 @@ header a:hover{
 }
 
     /* home prod card */
-  .products-grid {
+.products-grid {
+    align-items: stretch;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 4fr));
-    gap: 2rem;
-    margin: 20px;
-    padding: 20px;
+    gap: 40px;
+    grid-template-columns: repeat(3, 1fr);
+    height: auto;
+    justify-content: space-between; 
+    padding: 20px auto;
   }
 
-  .product-card {
+.product-card {
+    align-content: center;
     background: white;
     border-radius: 10px;
-    overflow: hidden;
-    cursor: pointer;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    display: block;
+    justify-content: center;
+    overflow: hidden;
     transition: all 0.3s ease-in-out;
     text-decoration: none;
-    display: block;
   }
 
-  .product-card:hover {
+.product-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   }
 
-  .product-image {
+.card-image {
     width: 100%;
     aspect-ratio: 1;
     background-color: white;
@@ -461,28 +447,31 @@ header a:hover{
     overflow: hidden;
   }
 
-  .product-image img {
+.card-image img {
     width: 80%;
     height: 80%;
     object-fit: fill;
     padding: 55px;
   }
 
-  .product-info {
+.card-info {
     padding: 16px;
   }
 
 
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
     h1 {
       font-size: 32px;
     }
+}
 
+@media (max-width: 864px) {
     .products-grid {
-      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-      gap: 1rem;
+        display: flex;
+        flex-direction: column;
+        grid-template-columns: 1fr;
     }
-  }
+}
 
 @media (max-width: 900px) {
     .product-page {
@@ -497,14 +486,20 @@ header a:hover{
     }
 }
 
+  @media (max-width: 1290px) {
+    .products-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
 /*bag and confirmation page*/
 .bag-page {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 48px;
-    padding: 48px;
-    margin: 0;
+    gap: 20px;
+    padding: 20px;
+    margin: 20px;
 }
 
 .bag-page button {
@@ -515,13 +510,27 @@ header a:hover{
     cursor: pointer;
 }
 
+.bag-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.bag-item img {
+    height: auto;
+    width: 250px;
+}
+
 .bag-items {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 24px;
-    padding: 0;
-    margin: 0;
+    gap: 0px;
+    padding: 0px;
+    margin: 0px;
 }
 
 .bag-items ul {
@@ -554,6 +563,10 @@ header a:hover{
 .bag-items li h4{
     width: 100%;
     text-align: center;
+}
+
+.sad-frog img {
+    width: 500px;
 }
 
 .add-remove {

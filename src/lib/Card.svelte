@@ -12,7 +12,7 @@
             <h3>{product.item_name}</h3>
             <p>${price}</p>
         </div>
-        <button on:click|preventDefault={() => addToBag(product)} class="add-to-cart">
+        <button on:click|preventDefault={() => addToBag(product)} class="add-to-bag">
             <h6>Add to Bag</h6>
         </button>
     </div>

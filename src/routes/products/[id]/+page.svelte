@@ -10,10 +10,13 @@
         <h1>{product.item_name}</h1>
         <h3>${product.price}</h3>
         <p>{product.description}</p>
-        <button class="add-to-cart" on:click={() => addToBag(product)}>
-            <img src="/shopping-bag.svg" alt="Shopping Bag" />
+        <p>Size: {product.size}</p>
+        <p>Weight: {product.weight}</p>
+        <button class="add-to-bag" on:click={() => addToBag(product)}>
+            <!--<div class="shopping-bag">
+                <img src="/images/shopping-bag.svg" alt="Shopping Bag" />
+            </div> -->
             <h6>Add to Bag</h6>
         </button>
     </div>
-    <a class="back" href="/"><h5>← Continue Shopping</h5></a>
 </div>

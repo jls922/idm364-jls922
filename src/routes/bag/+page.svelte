@@ -3,11 +3,17 @@
 </script>
 
 <main>
-    <h1>Your Shopping Bag</h1>
+    <div class="bag-page">
+    <h1 class="center-text">Your Shopping Bag</h1>
 
     {#if $bag.length === 0}
-        <p>Your bag is empty</p>
-        <a href="/">Continue Shopping</a>
+        <p class="center-text">Your bag is empty</p>
+        <div class="sad-frog">
+            <img src="/images/no_item_icon.png" alt="icon of sad frog">
+        </div>
+        <p class="center-text">
+            <a href="/">Continue Shopping</a>
+        </p>
     {:else}
         <div class="bag-items">
             {#each $bag as item}
@@ -25,4 +31,6 @@
             <h3>Total: ${$bag.reduce((sum, item) => sum + parseFloat(item.price), 0).toFixed(2)}</h3>
         </div>
     {/if}
+
+    </div>
 </main>
