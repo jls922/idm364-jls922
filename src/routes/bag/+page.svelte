@@ -13,9 +13,6 @@
         <div class="sad-frog">
             <img src="/images/no_item_icon.png" alt="icon of sad frog">
         </div>
-        <p class="center-text">
-            
-        </p>
         <button class="add-to-bag" onclick={() => goto('/')}>
             <p class="button-link">Continue Shopping</p>
         </button>
