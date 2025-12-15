@@ -1,5 +1,7 @@
 <script>
     import { bag } from '$lib/stores/cart.svelte';
+    import { goto } from '$app/navigation';
+    import { deleteFromBag, addToBag, removeFromBag } from '$lib/stores/cart.svelte';
 </script>
 
 <main>
@@ -14,8 +16,8 @@
         <p class="center-text">
             
         </p>
-        <button class="add-to-bag">
-            <a href="/" class="button-link">Continue Shopping</a>
+        <button class="add-to-bag" onclick={() => goto('/')}>
+            <p class="button-link">Continue Shopping</p>
         </button>
     {:else}
         <div class="bag-items">
@@ -25,13 +27,23 @@
                     <div class="item-details">
                         <h3>{item.item_name}</h3>
                         <p>${item.price}</p>
+                        
+                        <div class="quantity-controls">
+                            <button onclick={() => removeFromBag(item.id)}>-</button>
+                            <span>{item.quantity}</span>
+                            <button onclick={() => addToBag(item)}>+</button>
+                        </div>
+
+                        <button class="add-to-bag" onclick={() => deleteFromBag(item.id)}>
+                            <h6>Remove from Bag</h6>
+                        </button>
                     </div>
                 </div>
             {/each}
         </div>
 
         <div class="bag-total">
-            <h3>Total: ${$bag.reduce((sum, item) => sum + parseFloat(item.price), 0).toFixed(2)}</h3>
+            <h3>Total: ${$bag.reduce((sum, item) => sum + (parseFloat(item.price) * item.quantity), 0).toFixed(2)}</h3>
         </div>
     {/if}
 
