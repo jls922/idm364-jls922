@@ -9,7 +9,11 @@
 
 <div class="homepage">
     <div class="hero">
-        <h1>Welcome to Toadally! Explore vibrant frogs, toads, and more. Your next fascinating companion awaits.</h1>
+        <h1>Welcome to Toadally! Explore vibrant frogs, toads, and more. 
+          Your next fascinating companion awaits.</h1>
+        
+        <img src="/images/frog-logo.png" alt="frog logo happy">
+        
     </div>
     <div class="products-grid">
       {#each products as product}

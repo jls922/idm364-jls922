@@ -314,9 +314,20 @@ header a:hover{
     padding: 8px 16px;
 }
 
+.add-to-bag:active {
+    background-color: #031c0f;
+    color: white;
+}
+
 .add-to-cart img {
     height: 30px;
     width: 30px;
+}
+
+.button-link {
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
 }
 
 /*homepage*/
@@ -326,21 +337,27 @@ header a:hover{
     display: flex;
     flex-direction: column;
     margin: 0;
-    padding: 40px 20px 20px 20px;
+    padding: 20px 20px 0 20px;
 }
 
 .homepage .hero {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
 }
 
 .homepage .hero h1 {
-    text-align: center;
+    margin: auto 0;
+    text-align: start;
+    width: 75%;
 }
 
 .homepage .hero img {
+    height: 250px;
+    margin: auto 0;
+    max-height: 100%;
     max-width: 100%;
+    width: 250px;
 }
 
 .homepage .featured-products {
@@ -458,7 +475,6 @@ header a:hover{
     padding: 16px;
   }
 
-
 @media (max-width: 768px) {
     h1 {
       font-size: 32px;
@@ -470,6 +486,20 @@ header a:hover{
         display: flex;
         flex-direction: column;
         grid-template-columns: 1fr;
+    }
+
+    .homepage .hero h1 {
+        text-align: center;
+        margin: auto 0;
+        width: 75%;
+    }
+
+    .homepage .hero img {
+        height: 150px;
+        margin: auto 0;
+        max-height: 100%;
+        max-width: 100%;
+        width: 150px;
     }
 }
 

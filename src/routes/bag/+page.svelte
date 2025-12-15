@@ -7,13 +7,16 @@
     <h1 class="center-text">Your Shopping Bag</h1>
 
     {#if $bag.length === 0}
-        <p class="center-text">Your bag is empty</p>
+        <p class="center-text">There are no frogs in your bag</p>
         <div class="sad-frog">
             <img src="/images/no_item_icon.png" alt="icon of sad frog">
         </div>
         <p class="center-text">
-            <a href="/">Continue Shopping</a>
+            
         </p>
+        <button class="add-to-bag">
+            <a href="/" class="button-link">Continue Shopping</a>
+        </button>
     {:else}
         <div class="bag-items">
             {#each $bag as item}
