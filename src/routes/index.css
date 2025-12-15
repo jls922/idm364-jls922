@@ -9,9 +9,9 @@
 }
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 html, body {
@@ -65,17 +65,17 @@ a {
 }
 
 .center-text {
-    text-align: center;
     margin: auto;
+    text-align: center;
 }
 
 /*header*/
 header {
-    position: relative;
     background-color: #125231;
+    box-shadow: 0px 6px 6px rgb(0, 0, 0, 0.3);
     color: white;
+    position: relative;
     width: 100%;
-    box-shadow: 0px 6px 6px rgb(0, 0, 0, 0.2);
     z-index: 10;
 }
 
@@ -106,12 +106,12 @@ header a:hover{
 .menu {
     display: flex;
     flex-direction: row;
-    text-align: center;
-    max-width: 100%;
     font-size: 24px;
     list-style-type: none;
     margin: 0;
+    max-width: 100%;
     padding: 0;
+    text-align: center;
 }
 
 .menu > li {
@@ -120,13 +120,13 @@ header a:hover{
 }
 
 .menu-button-container {
+    align-items: center;
+    cursor: pointer;
     display: none;
     height: 100%;
-    width: 50px;
-    cursor: pointer;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    width: 50px;
 }
 
 #menu-toggle {
@@ -135,13 +135,13 @@ header a:hover{
 
 /*hamburger icon*/
 .menu-button, .menu-button::before, .menu-button::after {
-    display: block;
     background-color: white;
-    position: absolute;
-    height: 8px;
-    width: 55px;
-    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
     border-radius: 10px;
+    display: block;
+    height: 8px;
+    position: absolute;
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    width: 55px;
 }
 
 .menu-button::before {
@@ -180,15 +180,15 @@ header a:hover{
     }
 
     .menu {
-        position: absolute;
-        top: 0;
-        margin-top: 75px;
-        left: 0;
-        flex-direction: column;
-        width: 100%;
-        justify-content: center;
         align-items: center;
         box-shadow: 0px 6px 6px rgb(0, 0, 0, 0.2);
+        flex-direction: column;
+        justify-content: center;
+        left: 0;
+        margin-top: 75px;
+        position: absolute;
+        top: 0;
+        width: 100%;
     }
 
     .menu > li {
@@ -196,10 +196,10 @@ header a:hover{
     }
 
     #menu-toggle ~ .menu li {
+        border: 0;
         height: 0;
         margin: 0;
         padding: 0;
-        border: 0;
         transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
     }
 
@@ -211,24 +211,24 @@ header a:hover{
     }
 
     .menu > li {
+        align-items: center;
+        background-color: #125231;
         display: flex;
         justify-content: center;
-        align-items: center;
         margin: 0;
         padding: 1em 0;
         width: 100%;
-        background-color: #125231;
     }
 
     .menu > li a {
         display:block;
-        width: 100%;
         height: 100%;
         line-height: 46px;
+        width: 100%;
     }
 }
 
-/*product card*/
+/*product card - homepage*/
 .card-link {
     margin: 0 auto;
     text-decoration: none;
@@ -250,18 +250,6 @@ header a:hover{
     transition: background-color 0.2s ease-in-out;
     max-width: 100%;
     width: 360px;
-    /*display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-    row-gap: 16px; 
-    background-color: white;
-    border-radius: 24px;
-    border: 2px solid #125231;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    padding: 24px;
-    width: 290px;
-    height: 448px;*/
 }
 
 .product-card img {
@@ -279,25 +267,6 @@ header a:hover{
     width: 100%;
     padding: 4px 0;
     border-top: 2px solid black;
-}
-
-.piece-count {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    column-gap: 4px;
-}
-
-.piece-count img {
-    height: 30px;
-    width: 30px;
-}
-
-.card-info h4 {
-    width: 100%;
-    text-wrap: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .add-to-bag {
@@ -376,17 +345,17 @@ header a:hover{
     padding: 0;
 }
 
-/*product page*/
+/*individual product page*/
 .product-page {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: 24px;
+    margin: auto;
     min-height: 80vh;
     max-width: 1200px;
     padding: 48px;
-    margin: auto;
 }
 
 .product-page .add-to-bag {
@@ -402,30 +371,30 @@ header a:hover{
 }
 
 .product-image {
+    height: auto;
     max-width: 30vw;
     max-height: 70vh;
     width: auto;
-    height: auto;
 }
 
 .product-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
     align-items: start;
-    row-gap: 12px;
-    width: 100%;
-    max-width: 850px;
-    height: 100%;
-    padding-left: 24px;
-    padding: 24px;
     border-radius: 24px;
     background-color: white;
     border: 2px solid #125231;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    height: 100%;
+    max-width: 850px;
+    padding-left: 24px;
+    padding: 24px;
+    row-gap: 12px;
+    width: 100%;
 }
 
-    /* home prod card */
+/* home prod card */
 .products-grid {
     align-items: stretch;
     display: grid;
@@ -450,25 +419,25 @@ header a:hover{
   }
 
 .product-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     transform: translateY(-4px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   }
 
 .card-image {
-    width: 100%;
+    align-items: center;
     aspect-ratio: 1;
     background-color: white;
     display: flex;
-    align-items: center;
     justify-content: center;
     overflow: hidden;
+    width: 100%;
   }
 
 .card-image img {
-    width: 80%;
     height: 80%;
     object-fit: fill;
     padding: 55px;
+    width: 80%;
   }
 
 .card-info {
@@ -509,18 +478,18 @@ header a:hover{
     }
 
     .product-image {
+        height: auto;
         max-width: 70vw;
         max-height: 70vh;
         width: auto;
-        height: auto;
     }
 }
 
-  @media (max-width: 1290px) {
+@media (max-width: 1290px) {
     .products-grid {
-      grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
-  }
+}
 
 /*bag and confirmation page*/
 .bag-page {
@@ -564,47 +533,8 @@ header a:hover{
     margin: 0px;
 }
 
-.bag-items ul {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    width: 100%;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.bag-items li {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: 24px;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    background-color: white;
-    border-radius: 24px;
-    border: 2px solid #125231;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    padding: 24px;
-}
-
-.bag-items li h4{
-    width: 100%;
-    text-align: center;
-}
-
 .sad-frog img {
     width: 500px;
-}
-
-.add-remove {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    column-gap: 12px;
 }
 
 .quantity-controls {
@@ -640,17 +570,17 @@ header a:hover{
 }
 
 .quantity-selector {
-    margin: 0;
-    display: flex;
     align-items: center;
+    display: flex;
     gap: 1rem;
+    margin: 0;
 }
 
 .quantity-selector button {
     align-items: center;
     height: 30px;
     border: 2px solid #031c0f;
-    border-radius: 10px;
+    border-radius: 12px;
     background: white;
     color: #031c0f;
     cursor: pointer;
