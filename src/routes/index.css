@@ -283,9 +283,14 @@ header a:hover{
     padding: 8px 16px;
 }
 
-.add-to-bag:active {
+.add-to-bag:hover {
     background-color: #031c0f;
     color: white;
+}
+
+.add-to-bag:active {
+    background-color: white;
+    color: #031c0f;
 }
 
 .add-to-cart img {
@@ -561,6 +566,12 @@ header a:hover{
 
 .quantity-controls button:hover {
     background: #b7b7b7;
+    color: #031c0f;
+}
+
+.quantity-controls button:active {
+    background: #031c0f;
+    color: white;
 }
 
 .quantity-controls span {
@@ -592,4 +603,10 @@ header a:hover{
 
 .quantity-selector button:hover {
     background: #b7b7b7;
+    color: #031c0f;
+}
+
+.quantity-selector button:active {
+    background: #031c0f;
+    color: white;
 }
