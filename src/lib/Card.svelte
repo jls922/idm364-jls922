@@ -1,6 +1,7 @@
 <script>
     import { addToBag } from '$lib/stores/cart.svelte';
-    export let id, item_name, price, image; 
+    
+    let { id, item_name, price, image } = $props();
 
     const product = { id, item_name, price, image };
 </script>
@@ -12,7 +13,9 @@
             <h3>{product.item_name}</h3>
             <p>${price}</p>
         </div>
-        <button on:click|preventDefault={() => addToBag(product)} class="add-to-bag">
+        <!--preventDefault makes it so that it won't interfer with the card's link to the item page. When clicking add to bag, it only does that
+        Without it, it would add to bag AND go to the item page-->
+        <button onclick={(e) => { e.preventDefault(); addToBag(product); }} class="add-to-bag"> 
             <h6>Add to Bag</h6>
         </button>
     </div>
