@@ -228,82 +228,6 @@ header a:hover{
     }
 }
 
-/*product card - homepage*/
-.card-link {
-    margin: 0 auto;
-    text-decoration: none;
-}
-
-.product-card {
-    align-items: stretch;
-    background-color: white;
-    border: 4px solid #031c0f; /*hmmm either solid or outset*/
-    border-radius: 10px;
-    color: #031c0f;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    justify-content: flex-start;
-    margin: 20px;
-    padding: 20px;
-    text-align: center;
-    transition: background-color 0.2s ease-in-out;
-    max-width: 100%;
-    width: 360px;
-}
-
-.product-card img {
-    height: 200px;
-    width: auto;
-    max-width: 100%;
-    object-fit: contain;
-}
-
-.card-info {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    row-gap: 8px;
-    width: 100%;
-    padding: 4px 0;
-    border-top: 2px solid black;
-}
-
-.add-to-bag {
-    align-items: center;
-    background-color: #125231;
-    border-radius: 12px;
-    color: white;
-    column-gap: 12px;
-    cursor: pointer;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin: 20px auto 0 auto;
-    padding: 8px 16px;
-}
-
-.add-to-bag:hover {
-    background-color: #031c0f;
-    color: white;
-}
-
-.add-to-bag:active {
-    background-color: white;
-    color: #031c0f;
-}
-
-.add-to-cart img {
-    height: 30px;
-    width: 30px;
-}
-
-.button-link {
-    color: white;
-    font-size: 16px;
-    text-decoration: none;
-}
-
 /*homepage*/
 .homepage {
     align-items: center;
@@ -399,7 +323,92 @@ header a:hover{
     width: 100%;
 }
 
-/* home prod card */
+/*product card - homepage*/
+.card-link {
+    margin: 0 auto;
+    text-decoration: none;
+}
+
+.product-card {
+    align-content: center;
+    align-items: stretch;
+    background: white;
+    border: 4px solid #031c0f; /*hmmm either solid or outset*/
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #031c0f;
+    cursor: pointer;
+    display: block;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    margin: 20px;
+    max-width: 100%;
+    overflow: hidden;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    width: 360px;
+}
+
+.product-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transform: translateY(-4px);
+  }
+
+.product-card img {
+    height: 200px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    row-gap: 8px;
+    width: 100%;
+    padding: 4px 0;
+    border-top: 2px solid black;
+}
+
+.add-to-bag {
+    align-items: center;
+    background-color: #125231;
+    border-radius: 12px;
+    color: white;
+    column-gap: 12px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 20px auto 0 auto;
+    padding: 8px 16px;
+}
+
+.add-to-bag:hover {
+    background-color: #031c0f;
+    color: white;
+}
+
+.add-to-bag:active {
+    background-color: white;
+    color: #031c0f;
+}
+
+.add-to-cart img {
+    height: 30px;
+    width: 30px;
+}
+
+.button-link {
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+}
+
 .products-grid {
     align-items: stretch;
     display: grid;
@@ -408,24 +417,6 @@ header a:hover{
     height: auto;
     justify-content: space-between; 
     padding: 20px auto;
-  }
-
-.product-card {
-    align-content: center;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    display: block;
-    justify-content: center;
-    overflow: hidden;
-    transition: all 0.3s ease-in-out;
-    text-decoration: none;
-  }
-
-.product-card:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    transform: translateY(-4px);
   }
 
 .card-image {
@@ -448,6 +439,19 @@ header a:hover{
 .card-info {
     padding: 16px;
   }
+
+@media (max-width: 445px) {
+    .card-image img {
+    height: 60%;
+    object-fit: fill;
+    padding: 55px;
+    width: 60%;
+    }
+    .product-card {
+        max-width: 300px;
+        width: 100%;
+    }
+}
 
 @media (max-width: 768px) {
     h1 {
